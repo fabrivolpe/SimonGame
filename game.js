@@ -48,16 +48,9 @@ function playSimon() {
 
     gamePattern.push(randomChosenColor);
 
-    // var sound = new Audio("sounds/" + randomChosenColor + ".mp3");
-    //
-    // sound.play();
-
-    for (i = 0; i < gamePattern.length; i++) {
-      var audio = new Audio("sounds/" + gamePattern[i] + ".mp3");
-      audio.load();
-      setTimeout(function() {
-        audio.play();
-      }, 100);
+    var sound = new Audio("sounds/" + randomChosenColor + ".mp3");
+    
+    sound.play();
 
   }
 
@@ -125,7 +118,7 @@ function checkAnswer(currentLevel) {
 
         $("body").removeClass("game-over");
 
-      }, 100);
+      }, 200);
 
       playWrongSound();
 
@@ -158,25 +151,6 @@ function checkAnswer(currentLevel) {
     });
 
   }
-
-
-  // $(document).click(function() {
-  //
-  //   if(gamePattern.length !== userClickedPattern.length) {
-  //
-  //     playButton.off("click");
-  //
-  //     playButton.hasClass("pressed");
-  //
-  //   } else {
-  //
-  //     playButton.on("click");
-  //
-  //     playButton.removeClass("pressed");
-  //
-  //   }
-  //
-  // })
 
   playSimon();
 
